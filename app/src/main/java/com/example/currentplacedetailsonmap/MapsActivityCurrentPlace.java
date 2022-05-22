@@ -16,6 +16,10 @@ package com.example.currentplacedetailsonmap;
 
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
@@ -38,9 +42,11 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.libraries.places.api.Places;
@@ -178,6 +184,43 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
     public void onMapReady(GoogleMap map) {
         this.map = map;
 
+        LatLng a = new LatLng(32.1574, 34.794785);
+        LatLng b = new LatLng(32.163752, 34.798006);
+        LatLng c = new LatLng(32.163400, 34.803864);
+        LatLng d = new LatLng(32.159012, 34.815265);
+        LatLng e = new LatLng(32.151203, 34.812913);
+        LatLng f = new LatLng(32.152235, 34.801706);
+        LatLng g = new LatLng(32.1574, 34.794785);
+        LatLng center = new LatLng(32.157244, 34.805062);
+
+
+        map.addMarker(new MarkerOptions().position(a).title("hiii"));
+        map.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(
+                        a,
+                        10f
+                )
+        );
+        map.addPolyline(
+                new PolylineOptions()
+                        .add(a)
+                        .add(b)
+                        .add(c)
+                        .add(d)
+                        .add(e)
+                        .add(f)
+                        .add(g)
+                        .width(2f)
+                        .color(Color.RED)
+        );
+        map.addCircle(
+                new CircleOptions()
+                .center(center)
+                .radius(600)
+                .strokeWidth(3f)
+                .strokeColor(Color.RED)
+                .fillColor(Color.argb(70,150,50,50))
+        );
         // [START_EXCLUDE]
         // [START map_current_place_set_info_window_adapter]
         // Use a custom info window adapter to handle multiple lines of text in the
@@ -445,4 +488,35 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
         }
     }
     // [END maps_current_place_update_location_ui]
+
+    public void drawPoly(Canvas canvas, int color, Point[] points) {
+        // line at minimum...
+        if (points.length < 2) {
+            return;
+        }
+
+        // paint
+        Paint polyPaint = new Paint();
+        polyPaint.setColor(color);
+        polyPaint.setStyle(Paint.Style.FILL);
+
+        // path
+        Path polyPath = new Path();
+        polyPath.moveTo(points[0].x, points[0].y);
+        int i, len;
+        len = points.length;
+        for (i = 0; i < len; i++) {
+            polyPath.lineTo(points[i].x, points[i].y);
+        }
+        polyPath.lineTo(points[0].x, points[0].y);
+
+        // draw
+        canvas.drawPath(polyPath, polyPaint);
+        drawPoly(canvas, 0xFF5555ee,
+                new Point[]{
+                        new Point(32 , 35),
+                        new Point(33 , 36),
+                        new Point(34 , 37)
+                });
+    }
 }
