@@ -14,9 +14,14 @@
 
 package com.example.currentplacedetailsonmap;
 
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
 import static com.example.currentplacedetailsonmap.Point.inDanger;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
@@ -182,7 +187,7 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
     @Override
     public void onMapReady(GoogleMap map) {
         this.map = map;
-        //herzelia
+        ///herzaliya
         LatLng a = new LatLng(32.1574, 34.794785);
         LatLng b = new LatLng(32.163752, 34.798006);
         LatLng c = new LatLng(32.163400, 34.803864);
@@ -190,9 +195,9 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
         LatLng e = new LatLng(32.151203, 34.812913);
         LatLng f = new LatLng(32.152235, 34.801706);
         LatLng g = new LatLng(32.1574, 34.794785);
-        LatLng center_herzelia = new LatLng(32.157244, 34.805062);
+        LatLng center = new LatLng(32.157244, 34.805062);
 
-        map.addMarker(new MarkerOptions().position(a).title("hiii"));
+        map.addMarker(new MarkerOptions().position(a).title(""));
         map.animateCamera(
                 CameraUpdateFactory.newLatLngZoom(
                         a,
@@ -200,7 +205,6 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
                 )
         );
         map.addPolyline(
-                //herzelia
                 new PolylineOptions()
                         .add(a)
                         .add(b)
@@ -210,21 +214,18 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
                         .add(f)
                         .add(g)
                         .width(2f)
-                        .color(Color.RED)
-
-
+                        .color(Color.BLUE)
         );
         map.addCircle(
-                //herzelia
                 new CircleOptions()
-                        .center(center_herzelia)
+                        .center(center)
                         .radius(600)
                         .strokeWidth(3f)
-                        .strokeColor(Color.RED)
+                        .strokeColor(Color.BLUE)
                         .fillColor(Color.argb(70,150,50,50))
-
-                //**********************************
+                //////////////////////////////////////////////////////////////////////////////////////////////////////
         );
+
         //Jenin
         LatLng a1 = new LatLng(32.4445239, 35.3002719);
         LatLng b1 = new LatLng(32.4564209, 35.3127193);
@@ -238,7 +239,7 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
         LatLng center1 = new LatLng(32.4627164, 35.3011339);
 
 
-        map.addMarker(new MarkerOptions().position(a).title("hiii"));
+        map.addMarker(new MarkerOptions().position(a).title("A"));
         map.animateCamera(
                 CameraUpdateFactory.newLatLngZoom(
                         a,
@@ -280,7 +281,7 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
         LatLng center2 = new LatLng(32.3087350, 35.0329247);
 
 
-        map.addMarker(new MarkerOptions().position(a).title("hiii"));
+        map.addMarker(new MarkerOptions().position(a).title("A"));
         map.animateCamera(
                 CameraUpdateFactory.newLatLngZoom(
                         a,
@@ -322,7 +323,7 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
         LatLng center3 = new LatLng(32.1898812, 34.9730072);
 
 
-        map.addMarker(new MarkerOptions().position(a).title("hiii"));
+        map.addMarker(new MarkerOptions().position(a).title("A"));
         map.animateCamera(
                 CameraUpdateFactory.newLatLngZoom(
                         a,
@@ -365,7 +366,7 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
         LatLng center4 = new LatLng(31.9023526, 35.2079231);
 
 
-        map.addMarker(new MarkerOptions().position(a).title("hiii"));
+        map.addMarker(new MarkerOptions().position(a).title("A"));
         map.animateCamera(
                 CameraUpdateFactory.newLatLngZoom(
                         a,
@@ -405,7 +406,7 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
         LatLng center5 = new LatLng(33.0132749, 35.6420611);
 
 
-        map.addMarker(new MarkerOptions().position(a).title("hiii"));
+        map.addMarker(new MarkerOptions().position(a).title("mine fields"));
         map.animateCamera(
                 CameraUpdateFactory.newLatLngZoom(
                         a,
@@ -442,7 +443,7 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
         LatLng center6 = new LatLng(30.6584399, 35.2381325);
 
 
-        map.addMarker(new MarkerOptions().position(a).title("hiii"));
+        map.addMarker(new MarkerOptions().position(a).title("mine fields"));
         map.animateCamera(
                 CameraUpdateFactory.newLatLngZoom(
                         a,
@@ -480,7 +481,7 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
         LatLng center7 = new LatLng(30.9342269, 35.3793572);
 
 
-        map.addMarker(new MarkerOptions().position(a).title("hiii"));
+        map.addMarker(new MarkerOptions().position(a).title("mine fields"));
         map.animateCamera(
                 CameraUpdateFactory.newLatLngZoom(
                         a,
@@ -495,7 +496,7 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
                         .add(d7)
                         .add(e7)
                         .add(f7)
-                         .add(g7)
+                        .add(g7)
                         .width(2f)
                         .color(Color.MAGENTA)
         );
@@ -508,7 +509,7 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
                         .fillColor(Color.argb(70,150,50,50))
                 //////////////////////////////////////////////////////////////////////////////////////////////////////
         );
-          //Nablus
+        //Nablus
         LatLng a8 = new LatLng(32.2417774, 35.2403352);
         LatLng b8 = new LatLng(32.2378197, 35.2276816);
         LatLng c8 = new LatLng(32.2315204, 35.2265611);
@@ -521,7 +522,7 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
         LatLng center8 = new LatLng(32.2301594, 35.2402735);
 
 
-        map.addMarker(new MarkerOptions().position(a).title("hiii"));
+        map.addMarker(new MarkerOptions().position(a).title("A"));
         map.animateCamera(
                 CameraUpdateFactory.newLatLngZoom(
                         a,
@@ -540,17 +541,18 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
                         .add(h8)
                         .add(i8)
                         .width(2f)
-                        .color(Color.MAGENTA)
+                        .color(Color.RED)
         );
         map.addCircle(
                 new CircleOptions()
                         .center(center8)
                         .radius(1100)
                         .strokeWidth(3f)
-                        .strokeColor(Color.MAGENTA)
+                        .strokeColor(Color.RED)
                         .fillColor(Color.argb(70,150,50,50))
                 //////////////////////////////////////////////////////////////////////////////////////////////////////
         );
+
 
 
         // [START_EXCLUDE]
@@ -843,5 +845,15 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
             Log.e("Exception: %s", e.getMessage());
         }
     }
+    public void setAlarm()
+    {
+
+    }
+    public void open_setting(MenuItem item) {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        intent.putExtra(EXTRA_MESSAGE, "message");
+        startActivity(intent);
+    }
+
     // [END maps_current_place_update_location_ui]
 }
