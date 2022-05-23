@@ -395,6 +395,119 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
                         .fillColor(Color.argb(70,150,50,50))
                 //////////////////////////////////////////////////////////////////////////////////////////////////////
         );
+        // מצפה גדות
+        LatLng a5 = new LatLng(33.0138662, 35.6419059);
+        LatLng b5 = new LatLng(33.0134774, 35.6430528);
+        LatLng c5 = new LatLng(33.0126679, 35.6430277);
+        LatLng d5 = new LatLng(33.0119848, 35.6420185);
+        LatLng e5 = new LatLng(33.0127309, 35.6408839);
+        LatLng f5 = new LatLng(33.0136775, 35.6416695);
+        LatLng center5 = new LatLng(33.0132749, 35.6420611);
+
+
+        map.addMarker(new MarkerOptions().position(a).title("hiii"));
+        map.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(
+                        a,
+                        10f
+                )
+        );
+        map.addPolyline(
+                new PolylineOptions()
+                        .add(a5)
+                        .add(b5)
+                        .add(c5)
+                        .add(d5)
+                        .add(e5)
+                        .add(f5)
+                        .width(2f)
+                        .color(Color.MAGENTA)
+        );
+        map.addCircle(
+                new CircleOptions()
+                        .center(center5)
+                        .radius(50)
+                        .strokeWidth(3f)
+                        .strokeColor(Color.MAGENTA)
+                        .fillColor(Color.argb(70,150,50,50))
+                //////////////////////////////////////////////////////////////////////////////////////////////////////
+        );
+        // עין יהב
+        LatLng a6 = new LatLng(30.6645500, 35.2366887);
+        LatLng b6 = new LatLng(30.6618769, 35.2449312);
+        LatLng c6 = new LatLng(30.6552365, 35.2431433);
+        LatLng d6 = new LatLng(30.6499129, 35.2346188);
+        LatLng e6 = new LatLng(30.6580010, 35.2274231);
+        LatLng f6 = new LatLng(30.6644978, 35.2380658);
+        LatLng center6 = new LatLng(30.6584399, 35.2381325);
+
+
+        map.addMarker(new MarkerOptions().position(a).title("hiii"));
+        map.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(
+                        a,
+                        10f
+                )
+        );
+        map.addPolyline(
+                new PolylineOptions()
+                        .add(a6)
+                        .add(b6)
+                        .add(c6)
+                        .add(d6)
+                        .add(e6)
+                        .add(f6)
+                        .width(2f)
+                        .color(Color.MAGENTA)
+        );
+        map.addCircle(
+                new CircleOptions()
+                        .center(center6)
+                        .radius(550)
+                        .strokeWidth(3f)
+                        .strokeColor(Color.MAGENTA)
+                        .fillColor(Color.argb(70,150,50,50))
+                //////////////////////////////////////////////////////////////////////////////////////////////////////
+        );
+        // נאות הכיכר
+        LatLng a7 = new LatLng(30.9369275, 35.3823443);
+        LatLng b7 = new LatLng(30.9338116, 35.3834978);
+        LatLng c7 = new LatLng(30.9311938, 35.3798718);
+        LatLng d7 = new LatLng(30.9317872, 35.3750438);
+        LatLng e7 = new LatLng(30.9358382, 35.3749359);
+        LatLng f7 = new LatLng(30.9374315, 35.3772039);
+        LatLng g7 = new LatLng(30.9375228, 35.3823606);
+        LatLng center7 = new LatLng(30.9342269, 35.3793572);
+
+
+        map.addMarker(new MarkerOptions().position(a).title("hiii"));
+        map.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(
+                        a,
+                        10f
+                )
+        );
+        map.addPolyline(
+                new PolylineOptions()
+                        .add(a7)
+                        .add(b7)
+                        .add(c7)
+                        .add(d7)
+                        .add(e7)
+                        .add(f7)
+                         .add(g7)
+                        .width(2f)
+                        .color(Color.MAGENTA)
+        );
+        map.addCircle(
+                new CircleOptions()
+                        .center(center7)
+                        .radius(300)
+                        .strokeWidth(3f)
+                        .strokeColor(Color.MAGENTA)
+                        .fillColor(Color.argb(70,150,50,50))
+                //////////////////////////////////////////////////////////////////////////////////////////////////////
+        );
         // [START_EXCLUDE]
         // [START map_current_place_set_info_window_adapter]
         // Use a custom info window adapter to handle multiple lines of text in the
