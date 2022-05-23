@@ -508,6 +508,51 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
                         .fillColor(Color.argb(70,150,50,50))
                 //////////////////////////////////////////////////////////////////////////////////////////////////////
         );
+          //Nablus
+        LatLng a8 = new LatLng(32.2417774, 35.2403352);
+        LatLng b8 = new LatLng(32.2378197, 35.2276816);
+        LatLng c8 = new LatLng(32.2315204, 35.2265611);
+        LatLng d8 = new LatLng(32.2235956, 35.2235956);
+        LatLng e8 = new LatLng(32.2166680, 35.2419709);
+        LatLng f8 = new LatLng(32.2115047, 35.2595130);
+        LatLng g8 = new LatLng(32.2204816, 35.2743416);
+        LatLng h8 = new LatLng(32.2307961, 35.2628745);
+        LatLng i8 = new LatLng(32.2427234,35.2398434);
+        LatLng center8 = new LatLng(32.2301594, 35.2402735);
+
+
+        map.addMarker(new MarkerOptions().position(a).title("hiii"));
+        map.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(
+                        a,
+                        10f
+                )
+        );
+        map.addPolyline(
+                new PolylineOptions()
+                        .add(a8)
+                        .add(b8)
+                        .add(c8)
+                        .add(d8)
+                        .add(e8)
+                        .add(f8)
+                        .add(g8)
+                        .add(h8)
+                        .add(i8)
+                        .width(2f)
+                        .color(Color.MAGENTA)
+        );
+        map.addCircle(
+                new CircleOptions()
+                        .center(center8)
+                        .radius(1100)
+                        .strokeWidth(3f)
+                        .strokeColor(Color.MAGENTA)
+                        .fillColor(Color.argb(70,150,50,50))
+                //////////////////////////////////////////////////////////////////////////////////////////////////////
+        );
+
+
         // [START_EXCLUDE]
         // [START map_current_place_set_info_window_adapter]
         // Use a custom info window adapter to handle multiple lines of text in the
