@@ -14,12 +14,11 @@
 
 package com.example.currentplacedetailsonmap;
 
+import static com.example.currentplacedetailsonmap.Point.inDanger;
+
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Path;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
@@ -56,6 +55,7 @@ import com.google.android.libraries.places.api.net.FindCurrentPlaceRequest;
 import com.google.android.libraries.places.api.net.FindCurrentPlaceResponse;
 import com.google.android.libraries.places.api.net.PlacesClient;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -85,7 +85,6 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
     // The geographical location where the device is currently located. That is, the last-known
     // location retrieved by the Fused Location Provider.
     private Location lastKnownLocation;
-
     // Keys for storing activity state.
     // [START maps_current_place_state_keys]
     private static final String KEY_CAMERA_POSITION = "camera_position";
@@ -183,7 +182,7 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
     @Override
     public void onMapReady(GoogleMap map) {
         this.map = map;
-
+        //herzelia
         LatLng a = new LatLng(32.1574, 34.794785);
         LatLng b = new LatLng(32.163752, 34.798006);
         LatLng c = new LatLng(32.163400, 34.803864);
@@ -191,7 +190,52 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
         LatLng e = new LatLng(32.151203, 34.812913);
         LatLng f = new LatLng(32.152235, 34.801706);
         LatLng g = new LatLng(32.1574, 34.794785);
-        LatLng center = new LatLng(32.157244, 34.805062);
+        LatLng center_herzelia = new LatLng(32.157244, 34.805062);
+
+        map.addMarker(new MarkerOptions().position(a).title("hiii"));
+        map.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(
+                        a,
+                        10f
+                )
+        );
+        map.addPolyline(
+                //herzelia
+                new PolylineOptions()
+                        .add(a)
+                        .add(b)
+                        .add(c)
+                        .add(d)
+                        .add(e)
+                        .add(f)
+                        .add(g)
+                        .width(2f)
+                        .color(Color.RED)
+
+
+        );
+        map.addCircle(
+                //herzelia
+                new CircleOptions()
+                        .center(center_herzelia)
+                        .radius(600)
+                        .strokeWidth(3f)
+                        .strokeColor(Color.RED)
+                        .fillColor(Color.argb(70,150,50,50))
+
+                //**********************************
+        );
+        //Jenin
+        LatLng a1 = new LatLng(32.4445239, 35.3002719);
+        LatLng b1 = new LatLng(32.4564209, 35.3127193);
+        LatLng c1 = new LatLng(32.4639618, 35.3194115);
+        LatLng d1 = new LatLng(32.4741171, 35.3017076);
+        LatLng e1 = new LatLng(32.4711603, 35.2823321);
+        LatLng f1 = new LatLng(32.4611745, 35.2760606);
+        LatLng g1 = new LatLng(32.4540321, 35.2911455);
+        LatLng h1 = new LatLng(32.4437728, 35.2921648);
+        LatLng i1 = new LatLng(32.444232, 35.2986833);
+        LatLng center1 = new LatLng(32.4627164, 35.3011339);
 
 
         map.addMarker(new MarkerOptions().position(a).title("hiii"));
@@ -203,23 +247,153 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
         );
         map.addPolyline(
                 new PolylineOptions()
-                        .add(a)
-                        .add(b)
-                        .add(c)
-                        .add(d)
-                        .add(e)
-                        .add(f)
-                        .add(g)
+                        .add(a1)
+                        .add(b1)
+                        .add(c1)
+                        .add(d1)
+                        .add(e1)
+                        .add(f1)
+                        .add(g1)
+                        .add(h1)
+                        .add(i1)
                         .width(2f)
                         .color(Color.RED)
         );
         map.addCircle(
                 new CircleOptions()
-                .center(center)
-                .radius(600)
-                .strokeWidth(3f)
-                .strokeColor(Color.RED)
-                .fillColor(Color.argb(70,150,50,50))
+                        .center(center1)
+                        .radius(1200)
+                        .strokeWidth(3f)
+                        .strokeColor(Color.RED)
+                        .fillColor(Color.argb(70,150,50,50))
+                //////////////////////////////////////////////////////////////////////////////////////////////////////
+        );
+/// Tulkarem
+        LatLng a2 = new LatLng(32.3217711, 35.0292363);
+        LatLng b2 = new LatLng(32.3084516, 35.0121000);
+        LatLng c2 = new LatLng(32.2917520, 35.0142787);
+        LatLng d2 = new LatLng(32.2948080, 35.0264485);
+        LatLng e2 = new LatLng(32.3001774, 35.0444314);
+        LatLng f2 = new LatLng(32.3113544, 35.0489436);
+        LatLng g2 = new LatLng(32.3137927,35.0544692);
+        LatLng h2 = new LatLng(32.3217515, 35.0293286);
+        LatLng center2 = new LatLng(32.3087350, 35.0329247);
+
+
+        map.addMarker(new MarkerOptions().position(a).title("hiii"));
+        map.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(
+                        a,
+                        10f
+                )
+        );
+        map.addPolyline(
+                new PolylineOptions()
+                        .add(a2)
+                        .add(b2)
+                        .add(c2)
+                        .add(d2)
+                        .add(e2)
+                        .add(f2)
+                        .add(g2)
+                        .add(h2)
+                        .width(2f)
+                        .color(Color.RED)
+        );
+        map.addCircle(
+                new CircleOptions()
+                        .center(center2)
+                        .radius(1200)
+                        .strokeWidth(3f)
+                        .strokeColor(Color.RED)
+                        .fillColor(Color.argb(70,150,50,50))
+                //////////////////////////////////////////////////////////////////////////////////////////////////////
+        );
+////Kalkilya
+        LatLng a3 = new LatLng(32.1968141, 34.9640778);
+        LatLng b3 = new LatLng(32.1982678, 34.9616380);
+        LatLng c3 = new LatLng(32.1826647, 34.9586596);
+        LatLng d3 = new LatLng(32.1750179, 34.9661255);
+        LatLng e3 = new LatLng(32.1792316, 34.9839831);
+        LatLng f3 = new LatLng(32.1887384, 34.9906799);
+        LatLng g3 = new LatLng(32.2024785,34.9809119);
+        LatLng h3 = new LatLng(32.2024785, 34.9809119);
+        LatLng i3 = new LatLng(32.1982678, 34.9616380);
+        LatLng center3 = new LatLng(32.1898812, 34.9730072);
+
+
+        map.addMarker(new MarkerOptions().position(a).title("hiii"));
+        map.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(
+                        a,
+                        10f
+                )
+        );
+        map.addPolyline(
+                new PolylineOptions()
+                        .add(a3)
+                        .add(b3)
+                        .add(c3)
+                        .add(d3)
+                        .add(e3)
+                        .add(f3)
+                        .add(g3)
+                        .add(h3)
+                        .add(i3)
+                        .width(2f)
+                        .color(Color.RED)
+        );
+        map.addCircle(
+                new CircleOptions()
+                        .center(center3)
+                        .radius(1250)
+                        .strokeWidth(3f)
+                        .strokeColor(Color.RED)
+                        .fillColor(Color.argb(70,150,50,50))
+                //////////////////////////////////////////////////////////////////////////////////////////////////////
+        );
+        ////Ramallah
+        LatLng a4 = new LatLng(31.9337026, 35.2163851);
+        LatLng b4 = new LatLng(31.9222403, 35.2215838);
+        LatLng c4 = new LatLng(31.9132513, 35.2291328);
+        LatLng d4 = new LatLng(31.8886978, 35.2236861);
+        LatLng e4 = new LatLng(31.8782725, 35.2115414);
+        LatLng f4 = new LatLng(31.8891237, 35.1912869);
+        LatLng g4 = new LatLng(31.8986665, 35.1551609);
+        LatLng h4 = new LatLng(31.9089919, 35.1855347);
+        LatLng i4 = new LatLng(31.9359693, 35.2206568);
+        LatLng center4 = new LatLng(31.9023526, 35.2079231);
+
+
+        map.addMarker(new MarkerOptions().position(a).title("hiii"));
+        map.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(
+                        a,
+                        10f
+                )
+        );
+        map.addPolyline(
+                new PolylineOptions()
+                        .add(a4)
+                        .add(b4)
+                        .add(c4)
+                        .add(d4)
+                        .add(e4)
+                        .add(f4)
+                        .add(g4)
+                        .add(h4)
+                        .add(i4)
+                        .width(2f)
+                        .color(Color.RED)
+        );
+        map.addCircle(
+                new CircleOptions()
+                        .center(center4)
+                        .radius(1700)
+                        .strokeWidth(3f)
+                        .strokeColor(Color.RED)
+                        .fillColor(Color.argb(70,150,50,50))
+                //////////////////////////////////////////////////////////////////////////////////////////////////////
         );
         // [START_EXCLUDE]
         // [START map_current_place_set_info_window_adapter]
@@ -292,6 +466,7 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
                                     .newLatLngZoom(defaultLocation, DEFAULT_ZOOM));
                             map.getUiSettings().setMyLocationButtonEnabled(false);
                         }
+//
                     }
                 });
             }
@@ -333,9 +508,9 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
                                            @NonNull int[] grantResults) {
         locationPermissionGranted = false;
         if (requestCode
-            == PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION) {// If request is cancelled, the result arrays are empty.
+                == PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION) {// If request is cancelled, the result arrays are empty.
             if (grantResults.length > 0
-                && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 locationPermissionGranted = true;
             }
         } else {
@@ -351,6 +526,29 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
      */
     // [START maps_current_place_show_current_place]
     private void showCurrentPlace() {
+        Point p = new Point(lastKnownLocation.getLatitude(),lastKnownLocation.getLongitude());
+
+        ArrayList<Point> points = new ArrayList();
+        ArrayList<Double> radius = new ArrayList();
+//        LatLng center = new LatLng(32.157244, 34.805062);   הרצליה: 600
+//        LatLng center1 = new LatLng(32.4627164, 35.3011339);   גנין:1200
+//        LatLng center2 = new LatLng(32.3087350, 35.0329247);     טול כרם: 1200
+//        LatLng center3 = new LatLng(32.1898812, 34.9730072);    קלקילה:1250
+
+        points.add(new Point(32.157244, 34.805062));
+        points.add(new Point(32.4627164, 35.3011339));
+        points.add(new Point(32.3087350, 35.0329247));
+        points.add(new Point(32.1898812, 34.9730072));
+
+        radius.add(600.);
+        radius.add(1200.);
+        radius.add(1200.);
+        radius.add(1250.);
+
+        for (int i = 0; i < radius.size() ; i++) {
+            boolean alert =  inDanger(p,points.get(i),radius.get(i));
+        }
+
         if (map == null) {
             return;
         }
@@ -488,35 +686,4 @@ public class MapsActivityCurrentPlace extends AppCompatActivity
         }
     }
     // [END maps_current_place_update_location_ui]
-
-    public void drawPoly(Canvas canvas, int color, Point[] points) {
-        // line at minimum...
-        if (points.length < 2) {
-            return;
-        }
-
-        // paint
-        Paint polyPaint = new Paint();
-        polyPaint.setColor(color);
-        polyPaint.setStyle(Paint.Style.FILL);
-
-        // path
-        Path polyPath = new Path();
-        polyPath.moveTo(points[0].x, points[0].y);
-        int i, len;
-        len = points.length;
-        for (i = 0; i < len; i++) {
-            polyPath.lineTo(points[i].x, points[i].y);
-        }
-        polyPath.lineTo(points[0].x, points[0].y);
-
-        // draw
-        canvas.drawPath(polyPath, polyPaint);
-        drawPoly(canvas, 0xFF5555ee,
-                new Point[]{
-                        new Point(32 , 35),
-                        new Point(33 , 36),
-                        new Point(34 , 37)
-                });
-    }
 }
