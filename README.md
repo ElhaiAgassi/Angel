@@ -1,47 +1,17 @@
-Google Maps Android API Sample: Current Place Details
+Angel - your third eye. [currently in development]
 =====================================================
 
-This sample goes hand in hand with a tutorial for the Google Maps Android API:
-[Select Current Place and Show Details on a Map](https://developers.google.com/maps/documentation/android-api/current-place-tutorial).
+Angel planned to do the job that our guard-angel was supposed to do, before he resigned.
+He protects us from getting into unsafe areas and from dangerous occasions around our location.
 
-Prerequisites
---------------
+for example it's active a load siren 
+- when you accidantlty drive into A and B areas in israel.
+- when you hikeing into mine fields
+- when someone around you report about emergancy occation like terror attack
 
-- Android SDK v31
-- Latest Android Build Tools
-- Android Support Repository
-- Google Repository
-- Google Play Services
 
-Getting started
----------------
+**Builed in java by Android Studio for android devices**
 
-This sample uses the Gradle build system.
 
-1. Download the samples by cloning this repository or downloading an archived
-  snapshot. (See the options at the top of the page.)
-1. In Android Studio, create a new project and choose the "Import non-Android Studio project" or
-  "Import Project" option.
-1. Select the `CurrentPlaceDetailsOnMap` directory that you downloaded with this repository.
-1. If prompted for a gradle configuration, accept the default settings.
-  Alternatively use the `gradlew build` command to build the project directly.
-
-This demo app requires that you add your own Google Maps API key. See [Get an API Key](../../../docs/GET_AN_API_KEY.md) for more instructions.
-
-Support
--------
-
-- Stack Overflow: https://stackoverflow.com/questions/tagged/android+google-maps
-
-If you have discovered an issue with the Google Maps Android API v2, please see
-the resources here: https://developers.google.com/maps/documentation/android-api/support
-
-If you've found an error in these samples, please file an issue:
-https://github.com/googlemaps/android-samples/issues
-
-![Analytics](https://ga-beacon.appspot.com/UA-12846745-20/android-samples-apidemos/readme?pixel)
-
-License
--------
-
-Please refer to the [LICENSE](https://github.com/googlemaps/android-samples/blob/main/LICENSE) at the root of this repo.
+![WhatsApp Image 2022-05-23 at 10 32 40 PM](https://user-images.githubusercontent.com/70665375/170219395-818ae114-967a-4e6b-b5bb-64de75fc8d8d.jpeg)
+![WhatsApp Image 2022-05-23 at 10 32 41 PM](https://user-images.githubusercontent.com/70665375/170219402-ebcd49a8-556c-4069-a514-893303f772ec.jpeg)
