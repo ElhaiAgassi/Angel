@@ -1,5 +1,6 @@
-Angel - your third eye. [currently in developing
+Angel - your third eye 
 =====================================================
+[currently in development]
 
 Angel planned to do the job that our guard-angel was supposed to do before he resigned.
 He protects us from getting into unsafe areas and dangerous occasions around our location.
