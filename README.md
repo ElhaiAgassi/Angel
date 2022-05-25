@@ -1,13 +1,14 @@
-Angel - your third eye. [currently in development]
+Angel - your third eye. [currently in developing
 =====================================================
 
-Angel planned to do the job that our guard-angel was supposed to do, before he resigned.
-He protects us from getting into unsafe areas and from dangerous occasions around our location.
+Angel planned to do the job that our guard-angel was supposed to do before he resigned.
+He protects us from getting into unsafe areas and dangerous occasions around our location.
 
-for example it's active a load siren 
-- when you accidantlty drive into A and B areas in israel.
-- when you hikeing into mine fields
-- when someone around you report about emergancy occation like terror attack
+for example, it's active a loud siren 
+- when you accidentally drive into A and B areas in Israel.
+- when you hiking into minefields
+- when someone around you reports about an emergency occasion like a terror attack
+
 
 
 **Builed in java by Android Studio for android devices**
