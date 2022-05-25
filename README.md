@@ -1,5 +1,7 @@
 Angel - your third eye 
 =====================================================
+![Angel](https://user-images.githubusercontent.com/70665375/170220709-1cbcca43-a6d6-4a27-9a0c-d8f4ec5c3968.png)
+
 [currently in development]
 
 Angel planned to do the job that our guard-angel was supposed to do before he resigned.
